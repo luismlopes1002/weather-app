@@ -1,7 +1,15 @@
 {
-  "coord": { "lon": -9.1333, "lat": 39 },
+  "coord": {
+    "lon": -9.1333,
+    "lat": 39
+  },
   "weather": [
-    { "id": 801, "main": "Clouds", "description": "few clouds", "icon": "02d" }
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "icon": "02d"
+    }
   ],
   "base": "stations",
   "main": {
@@ -13,8 +21,13 @@
     "humidity": 57
   },
   "visibility": 10000,
-  "wind": { "speed": 2.57, "deg": 160 },
-  "clouds": { "all": 20 },
+  "wind": {
+    "speed": 2.57,
+    "deg": 160
+  },
+  "clouds": {
+    "all": 20
+  },
   "dt": 1663680688,
   "sys": {
     "type": 2,
