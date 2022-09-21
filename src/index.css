@@ -58,16 +58,23 @@ h1 {
   color: white;
 }
 
-.container {
-  max-width: 700px;
-  height: 700px;
+.outerContainer {
+  max-width: 80%;
+  height: 370px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
   top: 10%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: line;
+  justify-content: space-evenly;
+}
+
+.innerContainer {
+  width: 370px;
+  margin: 0 0 3rem 0.5rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .app .top {
@@ -77,17 +84,17 @@ h1 {
 
 .app .description {
   position: relative;
-  right: -90%;
+  right: -80%;
   transform-origin: 0 0;
   transform: rotate(270deg);
 }
 
 .app .bottom {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   text-align: center;
   width: 100%;
-  margin: 1rem auto;
+  margin: 0rem 0rem 0rem 0rem;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.15);
@@ -95,6 +102,10 @@ h1 {
 
 .bold {
   font-weight: 700;
+}
+
+.info {
+  font-size: 1rem;
 }
 
 code {
