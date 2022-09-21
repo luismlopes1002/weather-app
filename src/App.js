@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-  // const [data, setData] = useState({});
-  // const [location, setLocation] = useState("");
   const [res1, setResultArray1] = useState([]);
   const [res2, setResultArray2] = useState([]);
   // const [res3, setResultArray3] = useState([]);
@@ -26,24 +24,7 @@ function App() {
   // const r4 = axios.get(url4);
   // const r5 = axios.get(url5);
 
-  // axios.all([r1, r2, r3, r4, r5]).then(
-  // axios.all([r1, r2]).then(
-  //   axios.spread((...responses) => {
-  //     setResultArray1(responses[0].data);
-  //     setResultArray2(responses[1].data);
-  //     // setResultArray3(responses[2].data);
-  //     // setResultArray4(responses[3].data);
-  //     // setResultArray5(responses[4].data);
-  //   })
-  // );
-
   const searchLocation = () => {
-    // if (event.key === "Enter") {
-    //   axios.get(url).then((response) => {
-    //     setData(response.data);
-    //     console.log(response.data);
-    //   });
-    //   setLocation("");
     axios.all([r1, r2]).then(
       axios.spread((...responses) => {
         setResultArray1(responses[0].data);
@@ -53,7 +34,6 @@ function App() {
         // setResultArray5(responses[4].data);
       })
     );
-    // }
   };
 
   return (
