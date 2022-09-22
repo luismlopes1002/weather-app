@@ -5,11 +5,17 @@ function App() {
   const [res, setResultArray] = useState([]);
   const APIKEY = "de68f1e62679e41335ce198453b7db51";
 
-  const url1 = `https://api.openweathermap.org/data/2.5/weather?id=2735941&&units=metric&APPID=${APIKEY}`; // PORTO
-  const url2 = `https://api.openweathermap.org/data/2.5/weather?id=2740636&&units=metric&APPID=${APIKEY}`; // COIMBRA
-  const url3 = `https://api.openweathermap.org/data/2.5/weather?id=2267094&&units=metric&APPID=${APIKEY}`; // LEIRIA
-  const url4 = `https://api.openweathermap.org/data/2.5/weather?id=2267056&&units=metric&APPID=${APIKEY}`; // LISBOA
-  const url5 = `https://api.openweathermap.org/data/2.5/weather?id=2268337&&units=metric&APPID=${APIKEY}`; // FARO
+  // const url1 = `https://api.openweathermap.org/data/2.5/weather?id=2735941&units=metric&APPID=${APIKEY}`; // PORTO
+  // const url2 = `https://api.openweathermap.org/data/2.5/weather?id=2740636&units=metric&APPID=${APIKEY}`; // COIMBRA
+  // const url3 = `https://api.openweathermap.org/data/2.5/weather?id=2267094&units=metric&APPID=${APIKEY}`; // LEIRIA
+  // const url4 = `https://api.openweathermap.org/data/2.5/weather?id=2267056&units=metric&APPID=${APIKEY}`; // LISBOA
+  // const url5 = `https://api.openweathermap.org/data/2.5/weather?id=2268337&units=metric&APPID=${APIKEY}`; // FARO
+
+  const url1 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=PORTO`;
+  const url2 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=COIMBRA`;
+  const url3 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=LEIRIA`;
+  const url4 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=LISBOA`;
+  const url5 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=FARO`;
 
   const r1 = axios.get(url1);
   const r2 = axios.get(url2);
