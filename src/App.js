@@ -41,55 +41,51 @@ function App() {
         {/* {res[1].data.main !== undefined && (
           
         )} */}
-        {res.map((obj) => {
-          return (
-            <div className="innerContainer">
-              <div className="top">
-                <div className="location">
-                  <p>{obj.data.name}</p>
-                </div>
-                <div className="temp">
-                  {obj.data.main ? (
-                    <h1>{obj.data.main.temp.toFixed()}ºC</h1>
-                  ) : null}
-                </div>
-                <div className="description">
-                  {obj.data.weather ? (
-                    <p className="bold">{obj.data.weather[0].main}</p>
-                  ) : null}
-                  {obj.data.weather ? (
-                    <p>{obj.data.weather[0].description}</p>
-                  ) : null}
-                </div>
+        {res.map((obj) => (
+          <div className="innerContainer" key={obj.data.id}>
+            <div className="top">
+              <div className="location">
+                <p>{obj.data.name}</p>
               </div>
-
-              <div className="bottom">
-                <div className="feels">
-                  {obj.data.main ? (
-                    <p className="bold">
-                      {obj.data.main.feels_like.toFixed()}ºC
-                    </p>
-                  ) : null}
-                  <p className="info">Feels Like</p>
-                </div>
-                <div className="humidity">
-                  {obj.data.main ? (
-                    <p className="bold">{obj.data.main.humidity}%</p>
-                  ) : null}
-                  <p className="info">Humidity</p>
-                </div>
-                <div className="wind">
-                  {obj.data.main ? (
-                    <p className="bold">
-                      {(obj.data.wind.speed * 3.6).toFixed(1)} KMH
-                    </p>
-                  ) : null}
-                  <p className="info">Wind Speed</p>
-                </div>
+              <div className="temp">
+                {obj.data.main ? (
+                  <h1>{obj.data.main.temp.toFixed()}ºC</h1>
+                ) : null}
+              </div>
+              <div className="description">
+                {obj.data.weather ? (
+                  <p className="bold">{obj.data.weather[0].main}</p>
+                ) : null}
+                {obj.data.weather ? (
+                  <p>{obj.data.weather[0].description}</p>
+                ) : null}
               </div>
             </div>
-          );
-        })}
+
+            <div className="bottom">
+              <div className="feels">
+                {obj.data.main ? (
+                  <p className="bold">{obj.data.main.feels_like.toFixed()}ºC</p>
+                ) : null}
+                <p className="info">Feels Like</p>
+              </div>
+              <div className="humidity">
+                {obj.data.main ? (
+                  <p className="bold">{obj.data.main.humidity}%</p>
+                ) : null}
+                <p className="info">Humidity</p>
+              </div>
+              <div className="wind">
+                {obj.data.main ? (
+                  <p className="bold">
+                    {(obj.data.wind.speed * 3.6).toFixed(1)} KMH
+                  </p>
+                ) : null}
+                <p className="info">Wind Speed</p>
+              </div>
+            </div>
+          </div>
+        ))}
         {/* {res1.main !== undefined && (
           
         )} */}
