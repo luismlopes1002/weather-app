@@ -45,12 +45,12 @@ function App() {
     }, 1000 * 60 * 5);
   }
 
-  function renderSwitch(param) {
-    switch (param) {
-      case param < 10:
-        return;
-    }
-  }
+  // function renderSwitch(param) {
+  //   switch (param) {
+  //     case param < 10:
+  //       return;
+  //   }
+  // }
 
   return (
     <div className="app">
