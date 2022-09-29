@@ -12,19 +12,21 @@ function App() {
   const url4 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=LISBOA`;
   const url5 = `https://api.openweathermap.org/data/2.5/weather?APPID=${APIKEY}&units=metric&q=FARO`;
 
-  const r1 = axios.get(url1);
-  // const r2 = axios.get(url2);
-  // const r3 = axios.get(url3);
-  // const r4 = axios.get(url4);
-  // const r5 = axios.get(url5);
-
   function getData() {
-    axios.all([r1]).then(
-      axios.spread((...responses) => {
-        setResultArray(responses);
-        setTime(new Date(responses[0].data.dt * 1000).toLocaleString());
-      })
-    );
+    axios
+      .all([
+        axios.get(url1),
+        axios.get(url2),
+        axios.get(url3),
+        axios.get(url4),
+        axios.get(url5),
+      ])
+      .then(
+        axios.spread((...responses) => {
+          setResultArray(responses);
+          setTime(new Date(responses[0].data.dt * 1000).toLocaleString());
+        })
+      );
   }
 
   function updateData() {
@@ -34,23 +36,13 @@ function App() {
       setResultArray([]);
       setTime("");
       console.log("Deleted data");
-      setTimeout(
-        function () {
-          getData();
-          console.log("Data gotten");
-          console.log("5m passed");
-        }.bind(this),
-        1000
-      );
+      setTimeout(function () {
+        getData();
+        console.log("Data gotten");
+        console.log("5m passed");
+      }, 1000);
     }, 1000 * 60 * 5);
   }
-
-  // function renderSwitch(param) {
-  //   switch (param) {
-  //     case param < 10:
-  //       return;
-  //   }
-  // }
 
   return (
     <div className="app">
@@ -59,9 +51,6 @@ function App() {
       </div>
 
       <div className="outerContainer">
-        {/* {res[1].data.main !== undefined && (
-          
-        )} */}
         {res.map((obj) => (
           <div className="innerContainer" key={obj.data.id}>
             <div className="top">
@@ -107,9 +96,6 @@ function App() {
             </div>
           </div>
         ))}
-        {/* {res1.main !== undefined && (
-          
-        )} */}
       </div>
       <footer className="footer">
         {res[0] !== undefined && <p>Last Updated: {time}</p>}
